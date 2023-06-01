@@ -1,0 +1,28 @@
+name: Artifact Download & Upload Demo
+run-name: "${{ github.actor }} is running this workflow"
+on:
+  workflow_dispatch:
+
+jobs:
+  upload_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: createLogFile
+        run: ls -la > log.txt
+        shell: bash
+        
+      - name: uploadArtifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          file: log.txt
+    
+  download_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: downloadArtifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
+      
+            

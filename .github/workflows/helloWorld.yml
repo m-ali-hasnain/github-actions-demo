@@ -14,7 +14,6 @@ on:
       name: 
         type: string
         description: Enter your name
-      message:
         required: true
 
 jobs:

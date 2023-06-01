@@ -10,6 +10,12 @@ on:
     types: [opened]
   
   workflow_dispatch:
+    inputs:
+      name: 
+        type: string
+        description: Enter your name
+      message:
+        required: true
 
 jobs:
   sayHello:

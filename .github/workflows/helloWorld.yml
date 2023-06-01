@@ -1,0 +1,22 @@
+name: Hello World
+on:
+  push:
+    branches:
+      -main
+  pull_request:
+    branches:
+      -main
+  issues:
+    types: [opened]
+  
+  workflow_dispatch:
+
+jobs:
+  sayHello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sayHello
+        run: echo "Hello World!"
+        shell: bash
+        
+    

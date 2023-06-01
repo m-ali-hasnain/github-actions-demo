@@ -1,0 +1,23 @@
+name: Checks Bat Version
+on:
+  workflow_dispatch:
+
+jobs:
+  checkBatVersion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display information about user
+        run: echo "${{ github.actor }} is running this workflow"
+        shell: bash
+        
+      - name: Copy Github Repo Code to machine
+        uses: actions/checkout@v3
+      
+      - name: Setup Node js to host
+        uses: actions/setup-node@v3
+        
+      - name: Check Bat version
+        run: |
+              npm install -g bats
+              bats -v
+        

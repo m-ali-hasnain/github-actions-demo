@@ -15,7 +15,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          file: log.txt
+          path: log.txt
     
   download_artifact:
     runs-on: ubuntu-latest
